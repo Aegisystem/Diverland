@@ -1,2 +1,2 @@
 # Diverland
-Parque de diversiones diverlan
+Parque de diversiones diverland
