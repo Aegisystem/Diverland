@@ -1,0 +1,12 @@
+h1 {
+    margin-top: 20px;
+    font: bold;
+    text-align: center;
+}
+
+.box {
+    background-color: #FD841F;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
