@@ -1,12 +1,18 @@
 h1 {
     margin-top: 20px;
-    font: bold;
+    font-weight: 900;
+    text-transform: uppercase;
     text-align: center;
+}
+
+h2 {
+    font-weight: bold;
 }
 
 .box {
     background-color: #FD841F;
     margin: 20px;
-    padding: 10px;
+    padding: 25px;
     border-radius: 15px;
+    text-align: justify;
 }
