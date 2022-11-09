@@ -1,7 +1,7 @@
 div {
     background-color: #E14D2A;
+    text-align: right;
+    padding-right: 10px ;
+    font-size: medium;
 }
 
-.col {
-    margin-left: 15px;
-}
