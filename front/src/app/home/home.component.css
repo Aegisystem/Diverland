@@ -1,27 +1,79 @@
-.img-fluid{
+.img-fluid {
     display: block;
     width: 100%;
     height: auto;
 }
 
-div{
 
-    height: 250px;
-    width: 250px;
+
+div {
+
+    height: 300px;
+    width: 375px;
     background-color: #E14D2A;
     margin-top: 100px;
     border-radius: 10px;
-}
-
-.caja1{
+    float: left;
+    display: flex;
+    align-items: center;
     
+
+
+
+
+
 }
 
-.img-fluid1{
+.caja1 {
+
+    margin-left: 125px;
+    margin-right: 50px;
+
+
+
+}
+
+.caja2 {
+
+    margin-left: 20px;
+    margin-right: 50px;
+
+}
+
+.caja3 {
+
+    margin-left: 20px;
+    margin-right: 50px;
+    margin-bottom: 150px;
+
+}
+
+.img-fluid1 {
+
+
+    height: 100px;
+    width: 110px;
+    margin-left: 130px;
+    margin-bottom: 100px;
+    position: absolute;
    
-    height: 75px;
-    width: 75px;
-    display: block;
+
+}
+
+.img-fluid2 {
+
+    position: absolute;
+    height: 120px;
+    width: 170px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+
+
+}
+
+p {
+    
+    font-size: medium;
     
 
 }
