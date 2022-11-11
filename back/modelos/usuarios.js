@@ -21,10 +21,10 @@ const usuariosSchema = new mongoose.Schema({
     },
     salario: Number
 },
-{
-    versionKey: false,
-    timestamps: true
-}
+    {
+        versionKey: false,
+        timestamps: true
+    }
 );
 
 module.exports = mongoose.model('usuarios', usuariosSchema);
