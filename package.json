@@ -1,0 +1,29 @@
+{
+  "name": "diverland",
+  "version": "1.0.0",
+  "description": "Parque de diversiones diverlan",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon back/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aegisystem/Diverland.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aegisystem/Diverland/issues"
+  },
+  "homepage": "https://github.com/Aegisystem/Diverland#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
