@@ -4,7 +4,7 @@ const afiliadoCtrl = {};
 
 afiliadoCtrl.getAfiliados = async (req, res, next) => {
   const afiliados = await Afiliado.find();
-  res.json(integrantes);
+  res.json(afiliados);
 };
 
 afiliadoCtrl.createAfiliado = async (req, res, next) => {
@@ -25,7 +25,7 @@ afiliadoCtrl.createAfiliado = async (req, res, next) => {
 afiliadoCtrl.getAfiliado = async (req, res, next) => {
   const { id } = req.params;
   // Revisar el findById porque no estoy seguro si está funcionando bien
-  const afiliado = await Integrante.findById(id);
+  const afiliado = await Afiliado.findById(id);
   res.json(afiliado);
 };
 

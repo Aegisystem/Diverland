@@ -20,6 +20,7 @@ app.use(express.urlencoded({
 app.use(morgan('dev'))
 
 app.use("/api/afiliados", require('./routes/afiliados'))
+app.use("/api/usuarios", require('./routes/usuarios'))
 
 app.listen(port, () => {
     console.log('Online =D')
