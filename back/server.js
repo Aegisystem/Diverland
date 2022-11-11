@@ -21,6 +21,7 @@ app.use(morgan('dev'))
 
 app.use("/api/afiliados", require('./routes/afiliados'))
 app.use("/api/usuarios", require('./routes/usuarios'))
+app.use("/api/ventas", require('./routes/ventas'))
 
 app.listen(port, () => {
     console.log('Online =D')
