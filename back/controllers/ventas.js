@@ -12,10 +12,10 @@ ventaCtrl.createVenta = async (req, res, next) => {
   const venta = new Venta({
       //TODO Fixear id_venta para que sea automático el número
       id_venta: req.body.id_venta,
-      cedula: req.body.cedula,
-      apellidos: req.body.apellidos,
-      nombres: req.body.nombres,
-      categoria: req.body.categoria,
+      subtotal: req.body.subtotal,
+      iva: req.body.iva,
+      total: req.body.total,
+      metodoPago: req.body.metodoPago,
   });
 
   await venta.save();
