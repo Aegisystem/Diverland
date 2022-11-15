@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderCajeroComponent } from './pestañaCajero/header-cajero/header-cajero.component';
 import { ContenidoCajeroComponent } from './pestañaCajero/contenido-cajero/contenido-cajero.component';
+import { HeaderAdministradorComponent } from './pestañaAdministrador/header-administrador/header-administrador.component';
+import { ContenidoAdministradorComponent } from './pestañaAdministrador/contenido-administrador/contenido-administrador.component';
 
 const routes: Route[] = [
   {
@@ -28,6 +30,10 @@ const routes: Route[] = [
   {
     path: 'cajero',
     component: ContenidoCajeroComponent
+  },
+  {
+    path: 'administrador',
+    component: ContenidoAdministradorComponent
   }
 ]
 @NgModule({
@@ -39,7 +45,9 @@ const routes: Route[] = [
     LoginComponent,
     FooterComponent,
     HeaderCajeroComponent,
-    ContenidoCajeroComponent
+    ContenidoCajeroComponent,
+    HeaderAdministradorComponent,
+    ContenidoAdministradorComponent
   ],
   imports: [
     BrowserModule,
