@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const initDB = require('./config/db')
+const bcrypt = require('bcrypt')
 
 const app = express()
 
