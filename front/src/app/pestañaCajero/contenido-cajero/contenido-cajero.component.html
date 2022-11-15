@@ -6,41 +6,74 @@
             <div class="col">
                 <div class="box" id="datosCliente">
                     <h2>Datos del cliente</h2>
-                    <label for="">ID de afiliado:</label>
-                    <input type="text">
-                    <button>Validar</button>
-                    <br>
-                    <label for="">No. de documento:</label>
-                    <input type="text">
-                    <br>
-                    <label for="">Apellidos:</label>
-                    <input type="text">
-                    <br>
-                    <label for="">Nombres:</label>
-                    <input type="text">
-                    <br>
-                    <label for="">Categoría:</label>
-                    <input type="text" readonly>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ID de afiliado</span>
+                        <input type="text" class="form-control" placeholder="ID de afiliado" aria-label="ID de afiliado"
+                            aria-describedby="button-addon2">
+                        <button class="btn btn-outline-light" type="button" id="button-addon2">Validar</button>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">No. de documento</span>
+                        <input type="text" class="form-control" placeholder="No. de documento"
+                            aria-label="No. de documento">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Apellidos</span>
+                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Nombres</span>
+                        <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Categoría</span>
+                        <input type="text" disabled readonly class="form-control" placeholder="Categoría"
+                            aria-label="Categoría">
+                    </div>
+
                 </div>
             </div>
             <div class="col">
                 <div class="box" id="serviciosExtras">
                     <h2>Servicios extras</h2>
-                    <input type="checkbox" name="serviciosExtras" value="Almuerzo ejecutivo"> Almuerzo ejecutivo
-                    <br>
-                    <input type="checkbox" name="serviciosExtras" value="Snacks"> Snacks
-                    <br>
-                    <input type="checkbox" name="serviciosExtras" value="Sala de descanso"> Sala de descanso
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="">
+                            Almuerzo ejecutivo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="">
+                            Snacks
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="">
+                            Sala de descanso
+                        </label>
+                    </div>
                 </div>
                 <div class="box" id="metodosPago">
                     <h2>Métodos de pago</h2>
-                    <select name="" id="">
-                        <option value="">Efectivo</option>
-                        <option value="">Tarjeta</option>
+                    
+                    <select class="form-select" aria-label="Metodos de pago">
+                        <option selected>Seleccionar</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Tarjeta">Tarjeta</option>
                     </select>
                 </div>
             </div>
         </div>
-        <input type="submit" value="Vender tiquete">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-outline-success" type="button">Vender tiquete</button>
+        </div>
     </form>
 </div>
