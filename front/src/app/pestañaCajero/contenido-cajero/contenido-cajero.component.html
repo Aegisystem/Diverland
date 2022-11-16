@@ -6,12 +6,11 @@
             <div class="col">
                 <div class="box" id="datosCliente">
                     <h2>Datos del cliente</h2>
-
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID de afiliado</span>
-                        <input type="text" class="form-control" placeholder="ID de afiliado" aria-label="ID de afiliado"
+                        <input id= "idAfiliado" type="number" class="form-control" placeholder="ID de afiliado" aria-label="ID de afiliado"
                             aria-describedby="button-addon2">
-                        <button class="btn btn-outline-light" type="button" id="button-addon2">Validar</button>
+                    <button class="btn btn-outline-light" type="button" id="button-addon2" (click)="getAfiliado_ID(1)">Validar</button>
                     </div>
 
                     <div class="input-group mb-3">
@@ -35,7 +34,6 @@
                         <input type="text" disabled readonly class="form-control" placeholder="Categoría"
                             aria-label="Categoría">
                     </div>
-
                 </div>
             </div>
             <div class="col">

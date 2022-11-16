@@ -12,4 +12,8 @@ export class ContenidoCajeroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getAfiliado_ID(id: number) {
+
+  }
+
 }
