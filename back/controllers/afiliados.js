@@ -29,6 +29,13 @@ afiliadoCtrl.getAfiliado = async (req, res, next) => {
   res.json(afiliado);
 };
 
+afiliadoCtrl.getAfiliadoID = async (req, res, next) => {
+    const { id_afiliado } = req.params;
+    // Revisar el findById porque no estoy seguro si está funcionando bien
+    const afiliado = await Afiliado.find(id_afiliado);
+    res.json(afiliado);
+};
+
 afiliadoCtrl.editAfiliado = async (req, res, next) => {
   const { id } = req.params;
   await Afiliado.findByIdAndUpdate(id, {$set: req.body}, {new: true});

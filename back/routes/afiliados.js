@@ -10,6 +10,8 @@ router.post("/", controller.createAfiliado)
 
 router.get("/:id", controller.getAfiliado)
 
+router.get("/:idAfiliado", controller.getAfiliadoID)
+
 router.put("/:id", controller.editAfiliado)
 
 router.delete("/:id", controller.deleteAfiliado)
