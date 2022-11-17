@@ -1,0 +1,48 @@
+<app-header-administrador></app-header-administrador>
+<h1>Administración y Contabilidad</h1>
+<div class="container">
+    <form action="">
+        <div class="row justify-content-center">
+            <div class="box" id="registroNuevoAfiliado">
+                <h2>Registro de nuevo afiliado</h2>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">No. de documento</span>
+                    <input type="text" class="form-control" placeholder="No. de documento"
+                        aria-label="No. de documento">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Apellidos</span>
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Nombres</span>
+                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres">
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="">Categoría</label>
+                    <select class="form-select" id="categorias">
+                        <option selected>Seleccionar</option>
+                        <option value="Oro">Oro</option>
+                        <option value="Plata">Plata</option>
+                        <option value="Bronce">Bronce</option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-success" type="button">Registrar afiliado</button>
+                </div>
+
+            </div>
+            <div class="box">
+                <h2>Recaudo</h2>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-success" type="button">Mostrar recaudo</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
