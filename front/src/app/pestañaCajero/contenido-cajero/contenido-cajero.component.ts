@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contenido-cajero',
@@ -12,8 +13,8 @@ export class ContenidoCajeroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getAfiliado_ID(id: number) {
-
+  getAfiliado_ID(id: string) {
+    console.log(id)
   }
 
 }

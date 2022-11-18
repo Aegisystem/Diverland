@@ -1,16 +1,16 @@
 <app-header-cajero></app-header-cajero>
 <h1>Venta tiquete de servicios</h1>
 <div class="container">
-    <form action="">
+    <form action="" #VentaTiqueteForm="ngForm">
         <div class="row align-items-start">
             <div class="col">
                 <div class="box" id="datosCliente">
                     <h2>Datos del cliente</h2>
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID de afiliado</span>
-                        <input id= "idAfiliado" type="number" class="form-control" placeholder="ID de afiliado" aria-label="ID de afiliado"
+                        <input #idAfiliado id= "idAfiliado1" type="text" class="form-control" placeholder="ID de afiliado" aria-label="ID de afiliado"
                             aria-describedby="button-addon2">
-                    <button class="btn btn-outline-light" type="button" id="button-addon2" (click)="getAfiliado_ID(1)">Validar</button>
+                    <button class="btn btn-outline-light" type="button" id="button-addon2" (click)="getAfiliado_ID(idAfiliado.value)">Validar</button>
                     </div>
 
                     <div class="input-group mb-3">
