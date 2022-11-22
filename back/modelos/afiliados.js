@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const afiliadosSchema = new mongoose.Schema({
 
-    id_afiliado: {
+    idAfiliado: {
         type: Number,
         unique: true,
     },

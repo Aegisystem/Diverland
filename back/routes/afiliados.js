@@ -8,9 +8,9 @@ router.get("/", controller.getAfiliados)
 
 router.post("/", controller.createAfiliado)
 
-router.get("/:id", controller.getAfiliado)
+router.get("/:idAfiliado", controller.getAfiliado)
 
-router.get("/:idAfiliado", controller.getAfiliadoID)
+//router.get("/:idAfiliado", controller.getAfiliadoID)
 
 router.put("/:id", controller.editAfiliado)
 

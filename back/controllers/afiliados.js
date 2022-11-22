@@ -11,28 +11,30 @@ afiliadoCtrl.createAfiliado = async (req, res, next) => {
 
   const afiliado = new Afiliado({
       //TODO Fixear id_afiliado para que sea automático el número
-      id_afiliado: req.body.id_afiliado,
+      idAfiliado: req.body.idAfiliado,
       cedula: req.body.cedula,
       apellidos: req.body.apellidos,
       nombres: req.body.nombres,
       categoria: req.body.categoria,
+      visitas: req.body.visitas
   });
 
   await afiliado.save();
   res.json({ status: "Afiliado created" });
 };
 
+/*
 afiliadoCtrl.getAfiliado = async (req, res, next) => {
   const { id } = req.params;
   // Revisar el findById porque no estoy seguro si está funcionando bien
   const afiliado = await Afiliado.findById(id);
   res.json(afiliado);
 };
-
-afiliadoCtrl.getAfiliadoID = async (req, res, next) => {
-    const { id_afiliado } = req.params;
+*/
+afiliadoCtrl.getAfiliado = async (req, res, next) => {
+    const {idAfiliado} = req.params;
     // Revisar el findById porque no estoy seguro si está funcionando bien
-    const afiliado = await Afiliado.find(id_afiliado);
+    const afiliado = await Afiliado.find({idAfiliado});
     res.json(afiliado);
 };
 
