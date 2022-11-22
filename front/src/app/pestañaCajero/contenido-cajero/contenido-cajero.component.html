@@ -9,37 +9,38 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID de afiliado</span>
                         <input #idAfiliado 
-                        id= "idAfiliado1" 
-                        type="text" 
+                        id= "idAfiliado1"
+                        name="idAfiliado"
+                        type="number" 
                         class="form-control" 
                         placeholder="ID de afiliado"
                         aria-label="ID de afiliado"
                         aria-describedby="button-addon2"
-                        [(ngModel)]="afiliadoService.selectedAfiliado.id_afiliado">
-                    <button class="btn btn-outline-light" type="button" id="button-addon2" click="getAfiliados()" >Validar</button>
+                        [(ngModel)]="afiliadoService.selectedAfiliado.idAfiliado">
+                    <button class="btn btn-outline-light" type="button" id="button-addon2" (click)="getAfiliado(idAfiliado.value)" >Validar</button>
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">No. de documento</span>
-                        <input type="text" class="form-control" placeholder="No. de documento"
-                            aria-label="No. de documento"
+                        <input #cedula type="text" class="form-control" placeholder="No. de documento"
+                            aria-label="No. de documento" name="cedula"
                             [(ngModel)]="afiliadoService.selectedAfiliado.cedula">
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Apellidos</span>
-                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" [(ngModel)]="afiliadoService.selectedAfiliado.apellidos">                        >
+                        <input #apellids type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" name="apellidos" [(ngModel)]="afiliadoService.selectedAfiliado.apellidos">
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Nombres</span>
-                        <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"                         [(ngModel)]="afiliadoService.selectedAfiliado.nombres">
+                        <input #nombres type="text" class="form-control" placeholder="Nombres" aria-label="Nombres" name="nombres" [(ngModel)]="afiliadoService.selectedAfiliado.nombres">
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Categoría</span>
-                        <input type="text" disabled readonly class="form-control" placeholder="Categoría"
-                            aria-label="Categoría" [(ngModel)]="afiliadoService.selectedAfiliado.categoria">
+                        <input #categoria type="text" disabled readonly class="form-control" placeholder="Categoría"
+                            aria-label="Categoría" name="categoria" [(ngModel)]="afiliadoService.selectedAfiliado.categoria">
                     </div>
                 </div>
             </div>
@@ -48,19 +49,19 @@
                     <h2>Servicios extras</h2>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input #almuerzo class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="almuerzo">
                         <label class="form-check-label" for="">
                             Almuerzo ejecutivo
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input #snacks class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="">
                             Snacks
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input #descanso class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="">
                             Sala de descanso
                         </label>
@@ -69,7 +70,7 @@
                 <div class="box" id="metodosPago">
                     <h2>Métodos de pago</h2>
                     
-                    <select class="form-select" aria-label="Metodos de pago">
+                    <select #metodo class="form-select" aria-label="Metodos de pago">
                         <option selected>Seleccionar</option>
                         <option value="Efectivo">Efectivo</option>
                         <option value="Tarjeta">Tarjeta</option>
@@ -78,7 +79,7 @@
             </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-success" type="button">Vender tiquete</button>
+            <button class="btn btn-success" type="button" click="venderTicket()">Vender tiquete</button>
         </div>
     </form>
 </div>

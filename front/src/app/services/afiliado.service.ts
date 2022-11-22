@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Afiliado } from '../models/afiliado';
+import { Observable  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AfiliadoService {
 
   selectedAfiliado: Afiliado = {
     _id: "",
-    id_afiliado: 0,
+    idAfiliado: 0,
     cedula: 0,
     apellidos: "",
     nombres: "",

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {AfiliadoService} from '../../services/afiliado.service';
 import { FormsModule } from '@angular/forms';
@@ -26,14 +26,14 @@ export class ContenidoCajeroComponent implements OnInit {
     );
   }
 
-  /*getAfiliado_ID(id: string) {
-    var idNum = parseInt(id)
-    this.afiliadoService.getAfiliado(idNum).subscribe(
-            res => {
-              this.afiliadoService.selectedAfiliado = res
-            },
-            err => console.log(err)
-            );
+  getAfiliado(idAfiliado: String) {
+    this.afiliadoService.getAfiliado(Number(idAfiliado)).subscribe((res:Afiliado)=>{
+      this.afiliadoService.selectedAfiliado = res
+      console.log(this.afiliadoService.selectedAfiliado)
+    })
   }
-*/
+
+  venderTicket()  {
+    console.log("Acabas de vender un ticket")
+  }
 }

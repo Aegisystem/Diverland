@@ -1,5 +1,5 @@
 export interface Afiliado{
-  id_afiliado: Number
+  idAfiliado: Number
   cedula: Number
   apellidos: String
   nombres: String
