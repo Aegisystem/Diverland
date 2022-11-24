@@ -1,30 +1,41 @@
 <app-header-administrador></app-header-administrador>
 <h1>Administración y Contabilidad</h1>
 <div class="container">
-    <form action="">
+    <form action="" #RegistroAfiliado="ngForm" (ngSubmit)="addAfiliado(RegistroAfiliado)">
         <div class="row justify-content-center">
             <div class="box" id="registroNuevoAfiliado">
                 <h2>Registro de nuevo afiliado</h2>
 
                 <div class="input-group mb-3">
+                    <span class="input-group-text">ID Nuevo Afiliado</span>
+                    <input #idAfiliado name="idAfiliado" type="text" class="form-control" placeholder="ID de Afiliado"
+                        aria-label="ID de Afiliado"
+                        name="idAfiliado"
+                        [(ngModel)]="afiliadoService.selectedAfiliado.idAfiliado">
+                </div>
+                <div class="input-group mb-3">
                     <span class="input-group-text">No. de documento</span>
-                    <input type="text" class="form-control" placeholder="No. de documento"
-                        aria-label="No. de documento">
+                    <input #cedula name="cedula" type="text" class="form-control" placeholder="No. de documento"
+                        aria-label="No. de documento"
+                        name="cedula"
+                        [(ngModel)]="afiliadoService.selectedAfiliado.cedula">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Apellidos</span>
-                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                    <input #apellidos name="apellidos" type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos"
+                    [(ngModel)]="afiliadoService.selectedAfiliado.apellidos">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text">Nombres</span>
-                    <input type="text" class="form-control" placeholder="Nombres" aria-label="Nombres">
+                    <input #nombres name="nombres" type="text" class="form-control" placeholder="Nombres" aria-label="Nombres"
+                    [(ngModel)]="afiliadoService.selectedAfiliado.nombres">
                 </div>
 
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="">Categoría</label>
-                    <select class="form-select" id="categorias">
+                    <select #categoria name="categoria" class="form-select" id="categoria" [(ngModel)]="afiliadoService.selectedAfiliado.categoria">
                         <option selected>Seleccionar</option>
                         <option value="Oro">Oro</option>
                         <option value="Plata">Plata</option>
@@ -33,7 +44,7 @@
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-success" type="button">Registrar afiliado</button>
+                    <button class="btn btn-success" type="button" (click)="addAfiliado(RegistroAfiliado)">Registrar afiliado</button>
                 </div>
 
             </div>

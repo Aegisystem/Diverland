@@ -2,25 +2,17 @@ const mongoose = require('mongoose')
 
 const ventasSchema = new mongoose.Schema({
 
-    id_venta: {
+    almuerzo: {
         type: Number,
-        unique: true,
     },
-    subtotal: {
+    snack: {
         type: Number,
-        required: true
     },
-    iva: {
+    descanso: {
         type: Number,
-        required: true
     },
-    total: {
-        type: Number,
-        required: true
-    },
-    metodoPago: {
+    metodo: {
         type: String,
-        required: true
     },
 },
 {

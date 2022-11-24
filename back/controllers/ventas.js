@@ -11,11 +11,11 @@ ventaCtrl.createVenta = async (req, res, next) => {
 
   const venta = new Venta({
       //TODO Fixear id_venta para que sea automático el número
-      id_venta: req.body.id_venta,
-      subtotal: req.body.subtotal,
-      iva: req.body.iva,
-      total: req.body.total,
-      metodoPago: req.body.metodoPago,
+      almuerzo: req.body.almuerzo,
+      snack: req.body.snack,
+      descanso: req.body.descanso,
+      metodo: req.body.metodo,
+      tarjeta: req.body.tarjeta
   });
 
   await venta.save();

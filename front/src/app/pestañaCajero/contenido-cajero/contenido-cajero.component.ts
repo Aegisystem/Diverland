@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {AfiliadoService} from '../../services/afiliado.service';
 import { FormsModule } from '@angular/forms';
 import { Afiliado } from '../../models/afiliado';
+import { VentaService } from 'src/app/services/venta.service';
 
 @Component({
   selector: 'app-contenido-cajero',
@@ -11,7 +12,7 @@ import { Afiliado } from '../../models/afiliado';
 })
 export class ContenidoCajeroComponent implements OnInit {
 
-  constructor(public afiliadoService: AfiliadoService) { }
+  constructor(public afiliadoService: AfiliadoService, public ventaService: VentaService) { }
 
   ngOnInit(): void {
     this.getAfiliados
@@ -29,11 +30,21 @@ export class ContenidoCajeroComponent implements OnInit {
   getAfiliado(idAfiliado: String) {
     this.afiliadoService.getAfiliado(Number(idAfiliado)).subscribe((res:Afiliado)=>{
       this.afiliadoService.selectedAfiliado = res
-      console.log(this.afiliadoService.selectedAfiliado)
+      return (this.afiliadoService.selectedAfiliado)
     })
   }
 
-  venderTicket()  {
-    console.log("Acabas de vender un ticket")
+  venderTicket(ticketForm: NgForm)  {
+    console.log(ticketForm.value)
+    this.ventaService.createVenta(ticketForm.value).subscribe(
+      res => {
+          ticketForm.reset()
+          window.alert('Venta realizada exitosamente')
+      },
+      err => {
+        ticketForm.reset
+        alert(`Algo pusiste mal y explotó`)
+      }
+    )
   }
 }

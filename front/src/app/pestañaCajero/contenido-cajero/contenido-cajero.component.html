@@ -1,7 +1,7 @@
 <app-header-cajero></app-header-cajero>
 <h1>Venta tiquete de servicios</h1>
 <div class="container">
-    <form action="" #VentaTiqueteForm="ngForm">
+    <form action="" #VentaTiqueteForm="ngForm" (ngSubmit)="getAfiliado(idAfiliado.value)" >
         <div class="row align-items-start">
             <div class="col">
                 <div class="box" id="datosCliente">
@@ -9,7 +9,6 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text">ID de afiliado</span>
                         <input #idAfiliado 
-                        id= "idAfiliado1"
                         name="idAfiliado"
                         type="number" 
                         class="form-control" 
@@ -29,7 +28,7 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Apellidos</span>
-                        <input #apellids type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" name="apellidos" [(ngModel)]="afiliadoService.selectedAfiliado.apellidos">
+                        <input #apellidos type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" name="apellidos" [(ngModel)]="afiliadoService.selectedAfiliado.apellidos">
                     </div>
 
                     <div class="input-group mb-3">
@@ -45,41 +44,49 @@
                 </div>
             </div>
             <div class="col">
-                <div class="box" id="serviciosExtras">
-                    <h2>Servicios extras</h2>
-
-                    <div class="form-check">
-                        <input #almuerzo class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="almuerzo">
-                        <label class="form-check-label" for="">
-                            Almuerzo ejecutivo
-                        </label>
+                <form action="" #VentaForm="ngForm">
+                    <div class="box" id="serviciosExtras">
+                        <h2>Servicios extras</h2>
+    
+                        <div class="form-check">
+                            <input #almuerzo class="form-check-input" type="text" value="0" id="almuerzo" name="almuerzo"
+                            [(ngModel)]="ventaService.selectedVenta.almuerzo">
+                            <label class="form-check-label" for="">
+                                Almuerzo ejecutivo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input #snacks class="form-check-input" type="text" value="0" id="snack"
+                            name="snack"
+                            [(ngModel)]="ventaService.selectedVenta.snack">
+                            <label class="form-check-label" for="">
+                                Snacks
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input #descanso class="form-check-input" type="text" value="0" id="flexCheckDefault"
+                            name="descanso"
+                            [(ngModel)]="ventaService.selectedVenta.descanso">
+                            <label class="form-check-label" for="">
+                                Sala de descanso
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input #snacks class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="">
-                            Snacks
-                        </label>
+                    <div class="box" id="metodosPago">
+                        <h2>Métodos de pago</h2>
+                        
+                        <select #metodo name="metodo" class="form-select" aria-label="Metodos de pago" [(ngModel)]="ventaService.selectedVenta.metodo">
+                            <option selected>Seleccionar</option>
+                            <option name="efectivo" value="Efectivo">Efectivo</option>
+                            <option name="tarjeta" value="Tarjeta">Tarjeta</option>
+                        </select>
                     </div>
-                    <div class="form-check">
-                        <input #descanso class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="">
-                            Sala de descanso
-                        </label>
-                    </div>
+                
+                </form>
                 </div>
-                <div class="box" id="metodosPago">
-                    <h2>Métodos de pago</h2>
-                    
-                    <select #metodo class="form-select" aria-label="Metodos de pago">
-                        <option selected>Seleccionar</option>
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="Tarjeta">Tarjeta</option>
-                    </select>
-                </div>
-            </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-success" type="button" click="venderTicket()">Vender tiquete</button>
+            <button class="btn btn-success" type="button" (click)="venderTicket(VentaForm)">Vender tiquete</button>
         </div>
     </form>
 </div>
