@@ -30,6 +30,7 @@ export class ContenidoCajeroComponent implements OnInit {
   getAfiliado(idAfiliado: String) {
     this.afiliadoService.getAfiliado(Number(idAfiliado)).subscribe((res:Afiliado)=>{
       this.afiliadoService.selectedAfiliado = res
+      window.alert(JSON.stringify(this.afiliadoService.selectedAfiliado))
     })
   }
 

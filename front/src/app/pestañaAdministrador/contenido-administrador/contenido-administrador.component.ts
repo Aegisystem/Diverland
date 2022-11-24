@@ -23,10 +23,24 @@ export class ContenidoAdministradorComponent implements OnInit {
       this.afiliadoService.createAfiliado(form.value).subscribe(
         res => {
             form.reset()
+            window.alert('El afiliado se ha creado exitosamente')
         },
         err => {
           alert(`El afiliado ya existe`)
         }
       )
+  }
+
+  mostrarRecaudo()  {
+    this.ventaService.getRecaudo().subscribe((res)=>{
+      this.ventaService.recaudo = res
+      let message = "El Parque de Diversiones DiverLand Informa\n\n"
+      message += this.ventaService.recaudo.tickets + "\n"
+      message += this.ventaService.recaudo.almuerzos + "\n"
+      message += this.ventaService.recaudo.snacks + "\n"
+      message += this.ventaService.recaudo.descansos + "\n"
+      message += this.ventaService.recaudo.recaudoTotal + "\n"
+      alert(message)
+    })
   }
 }

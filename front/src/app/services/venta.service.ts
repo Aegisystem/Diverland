@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Venta } from '../models/venta';
 import {HttpClient} from '@angular/common/http'
+import { Recaudo } from '../models/recaudo';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,25 @@ export class VentaService {
     snack: 0,
     metodo: ""
   };
+
+  recaudo: Recaudo = {
+    tickets: "",
+    almuerzos: "",
+    snacks: "",
+    descansos: "",
+    recaudoTotal: ""
+  }
+
   ventas: Venta[] = []
 
   constructor(private http: HttpClient) {}
 
   getVentas() {
     return this.http.get<Venta[]>(this.URL_API)
+  }
+
+  getRecaudo() {
+    return this.http.get<Recaudo>(`${this.URL_API}/recaudo`)
   }
 
   getVenta(_id: Number) {
