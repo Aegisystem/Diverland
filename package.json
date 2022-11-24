@@ -1,7 +1,7 @@
 {
   "name": "diverland",
   "version": "1.0.0",
-  "description": "Parque de diversiones diverlan",
+  "description": "Parque de diversiones diverland",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon back/server.js",

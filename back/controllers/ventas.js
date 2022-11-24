@@ -4,8 +4,59 @@ const ventaCtrl = {};
 
 ventaCtrl.getVentas = async (req, res, next) => {
   const ventas = await Venta.find();
+  var totalVentas = ventas.length;
+  var almuerzo, descanso, snack, efectivo, tarjeta
+  for(let i=0; i<ventas.length; i++) {
+    if(ventas[i].almuerzo!=null){
+      almuerzo+=ventas[i].almuerzo;
+    }
+    if(ventas[i].descanso!=null){
+      descanso+=ventas[i].descanso;
+    }
+    if(ventas[i].snack!=null){
+      snack+=ventas[i].snack;
+    }
+    if(ventas[i].metodo!=null){
+      if(ventas[i].metodo=="Efectivo") {
+        efectivo++;
+      }
+      else {
+        tarjeta++;
+      }
+    }
+  }
+  let [vAlmuerzo, vSnack, vDescanso] = [almuerzo*15000, snack*3200, descanso*10000]
+  let totalRecaudo = vAlmuerzo + vDescanso + vSnack;
   res.json(ventas);
 };
+
+ventaCtrl.getRecaudo = async(req, res,next) => {
+  const ventas = await Venta.find();
+  let totalVentas = ventas.length;
+  let almuerzo, descanso, snack, efectivo, tarjeta
+
+  almuerzo = ventas.reduce((acumulator, current)=> {
+    return acumulator + current.almuerzo
+  }, 0)
+
+  snack = ventas.reduce((acumulator, current)=> {
+    return acumulator + current.snack
+  }, 0)
+
+  descanso = ventas.reduce((acumulator, current)=> {
+    return acumulator + current.descanso
+  }, 0)
+
+  let [vAlmuerzo, vSnack, vDescanso] = [almuerzo*15000, snack*3200, descanso*10000]
+  let totalRecaudo = vAlmuerzo + vDescanso + vSnack + totalVentas*35000;
+  res.json({
+    tickets: `${totalVentas} Tiquetes Vendidos`,
+    almuerzos: `${almuerzo} Almuerzos = $${vAlmuerzo}`,
+    snacks: `${snack} Snacks = $${vSnack}`,
+    descansos: `${descanso} Personas en sala de descanso = $${vDescanso}`,
+    recaudoTotal: `Se ha recaudado un total de: $${totalRecaudo}`,
+  });
+}
 
 ventaCtrl.createVenta = async (req, res, next) => {
 

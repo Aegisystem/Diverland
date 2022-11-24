@@ -6,6 +6,8 @@ const controller = require('../controllers/ventas')
 
 router.get("/", controller.getVentas)
 
+router.get("/recaudo", controller.getRecaudo)
+
 router.post("/", controller.createVenta)
 
 router.get("/:id", controller.getVenta)
