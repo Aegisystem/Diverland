@@ -8,19 +8,32 @@ afiliadoCtrl.getAfiliados = async (req, res, next) => {
 };
 
 afiliadoCtrl.createAfiliado = async (req, res, next) => {
+  
+  Afiliado.find().sort({idAfiliado:-1}).limit(1).then((data) => {
+    if(data)  {
+      newIdAfiliado = data[0].idAfiliado+1
+      const afiliado = new Afiliado({
+          //TODO Fixear id_afiliado para que sea automático el número
+          idAfiliado: newIdAfiliado,
+          cedula: req.body.cedula,
+          apellidos: req.body.apellidos,
+          nombres: req.body.nombres,
+          categoria: req.body.categoria,
+          visitas: req.body.visitas
+      });
+    
+      afiliado.save((err, afiliado) => {
+        if(err) { 
+          console.log("Algo explotó")
+        }
+        else{
+          console.log("Afiliado creado exitosamente")
+          res.json({ afiliado });
+        }
+      });
+    }
+  })
 
-  const afiliado = new Afiliado({
-      //TODO Fixear id_afiliado para que sea automático el número
-      idAfiliado: req.body.idAfiliado,
-      cedula: req.body.cedula,
-      apellidos: req.body.apellidos,
-      nombres: req.body.nombres,
-      categoria: req.body.categoria,
-      visitas: req.body.visitas
-  });
-
-  await afiliado.save();
-  res.json({ status: "Afiliado created" });
 };
 
 /*

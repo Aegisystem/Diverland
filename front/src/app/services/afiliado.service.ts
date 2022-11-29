@@ -12,7 +12,7 @@ export class AfiliadoService {
 
   selectedAfiliado: Afiliado = {
     _id: "",
-    idAfiliado: 0,
+    idAfiliado:0,
     cedula: 0,
     apellidos: "",
     nombres: "",

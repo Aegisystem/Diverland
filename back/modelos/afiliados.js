@@ -6,7 +6,10 @@ const afiliadosSchema = new mongoose.Schema({
         type: Number,
         unique: true,
     },
-    cedula: Number,
+    cedula: {
+        type: Number,
+        unique: true
+    },
     apellidos: {
         type: String,
         required: true
